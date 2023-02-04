@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import Button from './components/button'
+import wButton from './components/button'
 </script>
 
 <template>
-  <div>这里是wview组件库</div>
+  <div>
+    <div>这里是wview组件库</div>
 
-  <Button class="btn normal"></Button>
-  <Button class="btn warn"></Button>
-  <Button class="btn error"></Button>
-  <!-- TODO：鼠标悬浮时显示禁用原因(可自定义) -->
-  <Button class="btn disabled" disabled></Button>
+    <wButton type="default" class="btn">默认</wButton>
+    <wButton type="primary" class="btn">主要</wButton>
+    <wButton type="warn" class="btn">警告</wButton>
+    <wButton type="error" class="btn">错误</wButton>
+    <!-- TODO：鼠标悬浮时显示禁用原因(可自定义) -->
+    <wButton disabled="true" class="btn">禁用</wButton>
+  </div>
 </template>
 
 <style lang="scss">
@@ -20,25 +23,38 @@ import Button from './components/button'
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   color: grey;
   margin-left: 20px;
   transition: all 0.2s;
 }
 
-.normal {
+.default {
   background-color: $white-6;
   border: 3px solid rgb(183, 112, 183);
 }
 
-.normal:hover {
+.default:hover {
   color: $purple;
   background-color: rgb(225, 170, 225);
 }
 
-.normal:active {
+.default:active {
   border: 3px solid rgb(81, 0, 81);
+}
+
+.primary {
+  background-color: $blue;
+  color: $white;
+}
+
+.primary:hover {
+  opacity: 0.8;
+}
+
+.primary:active {
+  opacity: 1;
 }
 
 .warn {
